@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header__background__img {
+    position: relative;
+    background-image: url(../img/hero.jpg);
+    height: 56vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Aplica o efeito parallax */
+    overflow: hidden;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .header__background__img__txt {
+        position: absolute;
+        top: 50%; /* Ajuste o alinhamento vertical conforme necessário */
+        left: 50%; /* Ajuste o alinhamento horizontal conforme necessário */
+        transform: translate(-50%, -50%); /* Centraliza o texto */
+        z-index: 2;
+        text-align: center;
+
+        span{
+            color: rgb(21, 235, 32);
+        }
+        
+        h1 {
+            margin: 0;
+            color: #f9f9f9;
+            font-size: 3rem; /* Ajuste o tamanho da fonte conforme necessário */
+            line-height: 1.2;
+        }
+    }
+}
+
+.section__naoFiqueFora__background {
+    background-image: url(../img/NãoFiqueDeFora.jpg);
+    min-height: 56vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+    &__txt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #f9f9f9;
+        z-index: 2;
+        
+        h1 {
+            font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
+            margin: 0;
+            font-size: 50px;
+        }
+    }
+    
+    &__button {
+        position: absolute;
+        bottom: 20px; /* Ajuste conforme necessário */
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+
+        
+        a {
+            background-color: #007bff; /* Cor do botão */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+
+
+            
+            &:hover {
+                background-color: #0056b3; /* Cor do botão ao passar o mouse */
+
+
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+}
+
+
+@media (max-width: 640px){
+    
+    body{
+        background-color: #F2ECE4;
+    }
+    
+    .header__background__img{
+        background-image: none;
+
+        .header__background__img__txt{
+            span{
+                color: #594A3C;
+            }
+            h1{
+                font-size: 25px;
+                color: #594A3C;
+            }
+        }
+        
+        &::before {
+            display: none;
+        }
+
+    }
+
+    .section__naoFiqueFora__background {
+                background-image: none;
+                
+        
+                &__txt {
+        
+                    
+                    h1 {
+                    display: none;
+                    }
+                } 
+        
+                &::before {
+                    display: none;
+                }
+        
+                &__button{
+                    position: absolute;
+                    bottom: 50%; /* Ajuste conforme necessário */
+                    left: 50%;
+                    text-align: center;
+         
+                    a{
+                        padding: 10px;
+                        font-size: 10px;
+                        background-color: #594A3C;
+                        &:hover {
+                            background-color: #D9C2A7; /* Cor do botão ao passar o mouse */
+                            color: #594A3C;
+            
+                        }
+                    }
+
+                }
+    }
+}   
